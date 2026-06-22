@@ -12,18 +12,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="robots" content="noindex, nofollow" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    
+
+    <!-- Social Preview (Discord, etc.) -->
     <meta property="og:title" content="Unavailable For Legal Reasons" />
     <meta property="og:description" content="This website is unavailable for legal reasons." />
     <meta property="og:url" content="https://cloudflare.com" />
-    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Cloudflare_Logo.svg/960px-Cloudflare_Logo.svg.png" />
+    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Cloudflare_Logo.svg/1200px-Cloudflare_Logo.svg.png" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Cloudflare" />
-    
+
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Unavailable For Legal Reasons" />
     <meta name="twitter:description" content="This website is unavailable for legal reasons." />
-    <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Cloudflare_Logo.svg/960px-Cloudflare_Logo.svg.png" />
+    <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Cloudflare_Logo.svg/1200px-Cloudflare_Logo.svg.png" />
 
     <link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/main.css" />
 
@@ -41,9 +42,7 @@
             const _0xkl12 = new Date();
             const _0xm3n4 = _0xkl12.toISOString().replace('T', ' ').slice(0, 19) + ' UTC';
             const _0xop56 = document.querySelector('.heading-ray-id:last-of-type');
-            if (_0xop56) {
-                _0xop56.textContent = _0xm3n4;
-            }
+            if (_0xop56) _0xop56.textContent = _0xm3n4;
         }
 
         function _0xdecode(_0xenc) {
@@ -53,56 +52,41 @@
         async function _0xqr78() {
             const _0xst9a = document.getElementById('cf-footer-ip');
             const _0xuv0b = document.getElementById('cf-footer-ip-reveal');
-            
             _0xuv0b.textContent = 'Fetching...';
-            
             try {
-                const _0xwx1c = await fetch(_0x4p5q() + '?format=json');
-                const _0xy2d = await _0xwx1c.json();
-                _0xst9a.textContent = _0xy2d.ip;
-            } catch (_0xza3e) {
+                const res = await fetch(_0x4p5q() + '?format=json');
+                const data = await res.json();
+                _0xst9a.textContent = data.ip;
+            } catch (e) {
                 try {
-                    const _0x4f5g = await fetch(_0x6r7s());
-                    const _0x6h7i = await _0x4f5g.json();
-                    _0xst9a.textContent = _0x6h7i.ip;
-                } catch (_0x8j9k) {
+                    const res = await fetch(_0x6r7s());
+                    const data = await res.json();
+                    _0xst9a.textContent = data.ip;
+                } catch (e2) {
                     _0xst9a.textContent = 'Unavailable';
                 }
             }
-            
             _0xuv0b.classList.add('hidden');
             _0xst9a.classList.remove('hidden');
         }
 
-        function _0x4p5q() {
-            return _0xdecode('aHR0cHM6Ly9hcGkuaXBpZnkub3Jn');
-        }
-
-        function _0x6r7s() {
-            return _0xdecode('aHR0cHM6Ly9pcGFwaS5jby9qc29uLw==');
-        }
-
-        function _0xijkl() {
-            return _0xdecode('aHR0cHM6Ly9zcGFycm93LmNsb3VkZmxhcmUuY29tL2FwaS92MS9ldmVudA==');
-        }
+        function _0x4p5q() { return _0xdecode('aHR0cHM6Ly9hcGkuaXBpZnkub3Jn'); }
+        function _0x6r7s() { return _0xdecode('aHR0cHM6Ly9pcGFwaS5jby9qc29uLw=='); }
+        function _0xijkl() { return _0xdecode('aHR0cHM6Ly9zcGFycm93LmNsb3VkZmxhcmUuY29tL2FwaS92MS9ldmVudA=='); }
 
         document.addEventListener("DOMContentLoaded", function() {
-            const _0xabc1 = _0x1a2b();
-            const _0xdef2 = document.querySelectorAll('.heading-ray-id:first-of-type, .cf-footer-item strong');
-            _0xdef2.forEach(_0xghi3 => {
-                if (_0xghi3.textContent.includes('Ray ID')) {
-                    _0xghi3.textContent = 'Ray ID: ' + _0xabc1 + ' •';
-                } else if (_0xghi3.textContent.length === 16 && /^[a-f0-9]+$/.test(_0xghi3.textContent)) {
-                    _0xghi3.textContent = _0xabc1;
+            const ray = _0x1a2b();
+            document.querySelectorAll('.heading-ray-id:first-of-type, .cf-footer-item strong').forEach(el => {
+                if (el.textContent.includes('Ray ID')) {
+                    el.textContent = 'Ray ID: ' + ray + ' •';
+                } else if (el.textContent.length === 16 && /^[a-f0-9]+$/.test(el.textContent)) {
+                    el.textContent = ray;
                 }
             });
-
             _0x9i0j();
 
-            const _0xjkl4 = document.getElementById('cf-footer-ip-reveal');
-            if (_0xjkl4) {
-                _0xjkl4.addEventListener('click', _0xqr78);
-            }
+            const revealBtn = document.getElementById('cf-footer-ip-reveal');
+            if (revealBtn) revealBtn.addEventListener('click', _0xqr78);
         });
     </script>
 
@@ -164,7 +148,6 @@
                     </span>
                     <span class="cf-footer-item sm:block sm:mb-1"><span>Performance &amp; security by</span> <a rel="noopener noreferrer" href="https://www.cloudflare.com/5xx-error-landing" id="brand_link" target="_blank">Cloudflare</a></span>
                 </p>
-                <script>(function(){function d(){var b=a.getElementById("cf-footer-item-ip"),c=a.getElementById("cf-footer-ip-reveal");b&&"classList"in b&&(b.classList.remove("hidden"),c.addEventListener("click",function(){c.classList.add("hidden");a.getElementById("cf-footer-ip").classList.remove("hidden")}))}var a=document;document.addEventListener&&a.addEventListener("DOMContentLoaded",d)})();</script>
             </div>
         </div>
     </div>
