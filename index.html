@@ -12,20 +12,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="robots" content="noindex, nofollow" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-
-    <!-- Social Preview (Discord, etc.) -->
-    <meta property="og:title" content="Unavailable For Legal Reasons" />
-    <meta property="og:description" content="This website is unavailable for legal reasons." />
-    <meta property="og:url" content="https://cloudflare.com" />
-    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Cloudflare_Logo.svg/1200px-Cloudflare_Logo.svg.png" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Cloudflare" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Unavailable For Legal Reasons" />
-    <meta name="twitter:description" content="This website is unavailable for legal reasons." />
-    <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Cloudflare_Logo.svg/1200px-Cloudflare_Logo.svg.png" />
-
     <link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/main.css" />
 
     <script>
@@ -39,10 +25,10 @@
         }
 
         function _0x9i0j() {
-            const _0xkl12 = new Date();
-            const _0xm3n4 = _0xkl12.toISOString().replace('T', ' ').slice(0, 19) + ' UTC';
-            const _0xop56 = document.querySelector('.heading-ray-id:last-of-type');
-            if (_0xop56) _0xop56.textContent = _0xm3n4;
+            const now = new Date();
+            const utc = now.toISOString().replace('T', ' ').slice(0, 19) + ' UTC';
+            const timeEl = document.querySelector('.heading-ray-id:last-of-type');
+            if (timeEl) timeEl.textContent = utc;
         }
 
         function _0xdecode(_0xenc) {
@@ -50,37 +36,37 @@
         }
 
         async function _0xqr78() {
-            const _0xst9a = document.getElementById('cf-footer-ip');
-            const _0xuv0b = document.getElementById('cf-footer-ip-reveal');
-            _0xuv0b.textContent = 'Fetching...';
+            const ipSpan = document.getElementById('cf-footer-ip');
+            const revealBtn = document.getElementById('cf-footer-ip-reveal');
+            revealBtn.textContent = 'Fetching...';
+            
             try {
                 const res = await fetch(_0x4p5q() + '?format=json');
                 const data = await res.json();
-                _0xst9a.textContent = data.ip;
+                ipSpan.textContent = data.ip;
             } catch (e) {
                 try {
                     const res = await fetch(_0x6r7s());
                     const data = await res.json();
-                    _0xst9a.textContent = data.ip;
+                    ipSpan.textContent = data.ip;
                 } catch (e2) {
-                    _0xst9a.textContent = 'Unavailable';
+                    ipSpan.textContent = 'Unavailable';
                 }
             }
-            _0xuv0b.classList.add('hidden');
-            _0xst9a.classList.remove('hidden');
+            revealBtn.classList.add('hidden');
+            ipSpan.classList.remove('hidden');
         }
 
         function _0x4p5q() { return _0xdecode('aHR0cHM6Ly9hcGkuaXBpZnkub3Jn'); }
         function _0x6r7s() { return _0xdecode('aHR0cHM6Ly9pcGFwaS5jby9qc29uLw=='); }
-        function _0xijkl() { return _0xdecode('aHR0cHM6Ly9zcGFycm93LmNsb3VkZmxhcmUuY29tL2FwaS92MS9ldmVudA=='); }
 
         document.addEventListener("DOMContentLoaded", function() {
-            const ray = _0x1a2b();
+            const newRay = _0x1a2b();
             document.querySelectorAll('.heading-ray-id:first-of-type, .cf-footer-item strong').forEach(el => {
                 if (el.textContent.includes('Ray ID')) {
-                    el.textContent = 'Ray ID: ' + ray + ' •';
-                } else if (el.textContent.length === 16 && /^[a-f0-9]+$/.test(el.textContent)) {
-                    el.textContent = ray;
+                    el.textContent = 'Ray ID: ' + newRay + ' •';
+                } else if (el.textContent.length === 16) {
+                    el.textContent = newRay;
                 }
             });
             _0x9i0j();
@@ -91,7 +77,7 @@
     </script>
 
     <script>
-        (function(){if(document.addEventListener&&window.XMLHttpRequest&&JSON&&JSON.stringify){var e=function(a){var c=document.getElementById("error-feedback-survey"),d=document.getElementById("error-feedback-success"),b=new XMLHttpRequest;a={event:"feedback clicked",properties:{errorCode: 451 },helpful:a,version: 1 };b.open("POST",_0xijkl());b.setRequestHeader("Content-Type","application/json");b.setRequestHeader("Sparrow-Source-Key","c771f0e4b54944bebf4261d44bd79a1e");b.send(JSON.stringify(a));c.classList.add("feedback-hidden");d.classList.remove("feedback-hidden")};document.addEventListener("DOMContentLoaded",function(){var a=document.getElementById("error-feedback"),c=document.getElementById("feedback-button-yes"),d=document.getElementById("feedback-button-no");"classList"in a&&(a.classList.remove("feedback-hidden"),c.addEventListener("click",function(){e(!0)}),d.addEventListener("click",function(){e(!1)}))})}})();
+        (function(){if(document.addEventListener&&window.XMLHttpRequest&&JSON&&JSON.stringify){var e=function(a){var c=document.getElementById("error-feedback-survey"),d=document.getElementById("error-feedback-success"),b=new XMLHttpRequest;a={event:"feedback clicked",properties:{errorCode: 451 },helpful:a,version: 1 };b.open("POST","https://sparrow.cloudflare.com/api/v1/event");b.setRequestHeader("Content-Type","application/json");b.setRequestHeader("Sparrow-Source-Key","c771f0e4b54944bebf4261d44bd79a1e");b.send(JSON.stringify(a));c.classList.add("feedback-hidden");d.classList.remove("feedback-hidden")};document.addEventListener("DOMContentLoaded",function(){var a=document.getElementById("error-feedback"),c=document.getElementById("feedback-button-yes"),d=document.getElementById("feedback-button-no");"classList"in a&&(a.classList.remove("feedback-hidden"),c.addEventListener("click",function(){e(!0)}),d.addEventListener("click",function(){e(!1)}))})}})();
     </script>
     <script defer src="https://performance.radar.cloudflare.com/beacon.js"></script>
 </head>
@@ -107,10 +93,10 @@
                     <span>451</span>
                 </h1>
                 <span class="inline-block md:block heading-ray-id font-mono text-15 lg:text-sm lg:leading-relaxed">
-                    Ray ID: a0f862ceada2d0d4 &bull;
+                    Ray ID: a0f88c099971c93a &bull;
                 </span>
                 <span class="inline-block md:block heading-ray-id font-mono text-15 lg:text-sm lg:leading-relaxed">
-                    2026-06-22 04:07:25 UTC
+                    2026-06-22 04:35:34 UTC
                 </span>
                 <h2 class="text-gray-600 leading-1.3 text-3xl lg:text-2xl font-light">
                     Unavailable For Legal Reasons
@@ -121,6 +107,7 @@
                 <div id="what-happened-section" class="w-1/2 md:w-full">
                     <h2 class="text-3xl leading-tight font-normal mb-4 text-black-dark antialiased" data-translate="what_happened">What happened?</h2>
                     <p>This website is unavailable for legal reasons.</p>
+                    <p>Roblox Corporation requested the removal of this content.</p>
                     <p>Please see <a rel="noopener noreferrer" href="https://developers.cloudflare.com/support/troubleshooting/http-status-codes/4xx-client-error/error-451/" target="_blank">Cloudflare Error 451 Documentation</a> for more details.</p>
                 </div>
             </section>
@@ -138,7 +125,7 @@
 
             <div class="cf-error-footer cf-wrapper w-240 lg:w-full py-10 sm:py-4 sm:px-8 mx-auto text-center sm:text-left border-solid border-0 border-t border-gray-300">
                 <p class="text-13">
-                    <span class="cf-footer-item sm:block sm:mb-1">Cloudflare Ray ID: <strong class="font-semibold">a0f862ceada2d0d4</strong></span>
+                    <span class="cf-footer-item sm:block sm:mb-1">Cloudflare Ray ID: <strong class="font-semibold">a0f88c099971c93a</strong></span>
                     <span class="cf-footer-separator sm:hidden">&bull;</span>
                     <span id="cf-footer-item-ip" class="cf-footer-item hidden sm:block sm:mb-1">
                         Your IP: 
@@ -148,6 +135,7 @@
                     </span>
                     <span class="cf-footer-item sm:block sm:mb-1"><span>Performance &amp; security by</span> <a rel="noopener noreferrer" href="https://www.cloudflare.com/5xx-error-landing" id="brand_link" target="_blank">Cloudflare</a></span>
                 </p>
+                <script>(function(){function d(){var b=a.getElementById("cf-footer-item-ip"),c=a.getElementById("cf-footer-ip-reveal");b&&"classList"in b&&(b.classList.remove("hidden"),c.addEventListener("click",function(){c.classList.add("hidden");a.getElementById("cf-footer-ip").classList.remove("hidden")}))}var a=document;document.addEventListener&&a.addEventListener("DOMContentLoaded",d)})();</script>
             </div>
         </div>
     </div>
